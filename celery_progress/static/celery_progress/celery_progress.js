@@ -6,13 +6,13 @@ var CeleryProgressBar = (function () {
 
     function onErrorDefault(progressBarElement, progressBarMessageElement) {
         progressBarElement.style.backgroundColor = '#dc4f63';
-        progressBarMessageElement.innerHTML = "Uh-Oh, something went wrong!";
+        progressBarMessageElement.innerHTML = "Error!";
     }
 
     function onProgressDefault(progressBarElement, progressBarMessageElement, progress) {
         progressBarElement.style.backgroundColor = '#68a9ef';
         progressBarElement.style.width = progress.percent + "%";
-        progressBarMessageElement.innerHTML = progress.current + ' of ' + progress.total + ' processed.';
+        progressBarMessageElement.innerHTML = progress.percent + '% completed';
     }
 
     function updateProgress (progressUrl, options) {
@@ -48,6 +48,6 @@ var CeleryProgressBar = (function () {
         onErrorDefault: onErrorDefault,
         onProgressDefault: onProgressDefault,
         updateProgress: updateProgress,
-        initProgressBar: updateProgress,  // just for api cleanliness
+        initProgressBar: updateProgress,
     };
 })();
