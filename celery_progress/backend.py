@@ -75,6 +75,7 @@ def _get_completed_progress():
         'percent': 100,
     }
 
+
 def _get_unknown_progress():
     return {
         'current': 0,
